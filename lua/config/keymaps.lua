@@ -4,3 +4,4 @@
 
 vim.keymap.set("n", ";", ":")
 vim.keymap.set({ "n", "i" }, "<C-n>", "<leader>e")
+vim.keymap.set("v", "<C-c>", '"+y')
