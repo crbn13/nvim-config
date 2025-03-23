@@ -1,0 +1,2 @@
+https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
+    set to ensure that the stuff is installed  
