@@ -14,5 +14,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "cpp", "hpp" },
-  command = "setlocal shiftwidth=4 tabstop=4 softtabstop=4 smarttab",
+  command = "setlocal tabstop=4 shiftwidth=4 expandtab=true autoindent=true smarttab=true",
 })
