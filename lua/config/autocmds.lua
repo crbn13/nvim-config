@@ -10,6 +10,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "cpp", "hpp" },
   callback = function()
     vim.b.autoformat = false
+    vim.b.inlay_hints = false
+    vim.cmd("LspStart")
   end,
 })
 vim.api.nvim_create_autocmd("FileType", {
