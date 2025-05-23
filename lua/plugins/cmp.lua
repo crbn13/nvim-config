@@ -1,4 +1,4 @@
-return {}
+return { "Issafalcon/lsp-overloads.nvim" }
 
 --[[
 

@@ -2,8 +2,36 @@ local import_cmp, cmp = pcall(require, "cmp")
 if not import_cmp then
   return
 end
+local import_luasnip, luasnip = pcall(require, "luasnip")
+if not import_luasnip then
+  return
+end
 
 require("cmp").setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
+    { name = "nvim_lua" },
+    { name = "path" },
+    { name = "luasnip" },
+    { name = "buffer", keyword_length = 1 },
+  },
+
+  window = {
+    documentation = {
+      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+    },
+    completion = {
+      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+    },
+  },
+
   mapping = {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -25,6 +53,12 @@ require("cmp").setup({
         luasnip.jump(-1)
       else
         fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<Enter>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.confirm({ select = true })
       end
     end, { "i", "s" }),
   },
