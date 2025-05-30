@@ -1,4 +1,20 @@
-return { "Issafalcon/lsp-overloads.nvim" }
+return {
+  { "Issafalcon/lsp-overloads.nvim" },
+  {
+    {
+      "hedyhli/outline.nvim",
+      config = function()
+        -- Example mapping to toggle outline
+        vim.keymap.set("n", "<leader>uo", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+        require("outline").setup({
+          outline_window = { width = 15 },
+          -- Your setup opts here (leave empty to use defaults)
+        })
+      end,
+    },
+  },
+}
 
 --[[
 

@@ -59,6 +59,8 @@ require("cmp").setup({
     ["<Enter>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.confirm({ select = true })
+      else
+        fallback()
       end
     end, { "i", "s" }),
   },
