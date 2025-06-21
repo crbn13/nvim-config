@@ -94,6 +94,25 @@ return {
             },
           },
         },
+        arduino_language_server = {
+          cmd = {
+            "arduino-language-server",
+            "-cli-config",
+            vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
+            -- uncomment the next two lines if you use the same across different projects; otherwise, see the note about project config
+            "-fqbn",
+            "rp2040:rp2040:rpipico:usbstack=tinyusb",
+          },
+          -- override the updated 'capabilities' defined above by kickstart; otherwise these ones will make the arduino-language-server panic, see https://github.com/neovim/nvim-lspconfig/pull/2533
+          capabilities = {
+            textDocument = {
+              semanticTokens = vim.NIL,
+            },
+            workspace = {
+              semanticTokens = vim.NIL,
+            },
+          },
+        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -112,6 +131,8 @@ return {
   end,
   ---@param opts PluginLspOpts
   config = function(_, opts)
+    require("lspconfig").arduino_language_server.setup({ cmd = { "arduino-language-server" } })
+
     -- setup autoformat
     LazyVim.format.register(LazyVim.lsp.formatter())
 
