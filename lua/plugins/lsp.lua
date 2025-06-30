@@ -96,10 +96,13 @@ return {
         },
         arduino_language_server = {
           cmd = {
-            "arduino-language-server",
+            vim.fn.expand("~/go/bin/arduino-language-server"),
+            "-clangd",
+            "clangd",
             "-cli-config",
             vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
-            -- uncomment the next two lines if you use the same across different projects; otherwise, see the note about project config
+            "-cli",
+            vim.fn.expand("~/bin/arduino-cli"),
             "-fqbn",
             "rp2040:rp2040:rpipico:usbstack=tinyusb",
           },
