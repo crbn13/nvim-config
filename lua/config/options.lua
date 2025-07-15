@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.api.nvim_set_option_value("clipboard", "unnamed", { scope = "global" })
 vim.api.nvim_set_option_value("wrap", true, { scope = "global" })
+vim.g.autoformat = false
 
 vim.filetype.add({
   extension = {

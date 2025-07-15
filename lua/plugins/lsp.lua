@@ -96,13 +96,13 @@ return {
         },
         arduino_language_server = {
           cmd = {
-            vim.fn.expand("~/go/bin/arduino-language-server"),
+            vim.fn.expand("~/bin/arduino_language_server.sh"),
             "-clangd",
             "clangd",
             "-cli-config",
             vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
             "-cli",
-            vim.fn.expand("~/bin/arduino-cli"),
+            vim.fn.expand("arduino-cli"),
             "-fqbn",
             "rp2040:rp2040:rpipico:usbstack=tinyusb",
           },
