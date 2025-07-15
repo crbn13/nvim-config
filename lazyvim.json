@@ -3,8 +3,7 @@
     "lazyvim.plugins.extras.coding.luasnip",
     "lazyvim.plugins.extras.coding.nvim-cmp",
     "lazyvim.plugins.extras.coding.yanky",
-    "lazyvim.plugins.extras.editor.outline",
-    "lazyvim.plugins.extras.lang.clangd"
+    "lazyvim.plugins.extras.editor.outline"
   ],
   "install_version": 8,
   "news": {

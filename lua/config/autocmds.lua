@@ -14,9 +14,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.expandtab = true
     vim.opt_local.autoindent = true
     vim.opt_local.smarttab = true
-    vim.b.autoformat = false
     vim.b.inlay_hints = false
-    vim.cmd("LspStart")
-    vim.cmd("TSDisable indent")
+    --vim.cmd("LspStart")
+    --vim.cmd("TSDisable indent")
   end,
 })
